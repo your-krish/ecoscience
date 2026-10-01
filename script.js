@@ -33,8 +33,7 @@ const spy = new IntersectionObserver(
           l.classList.toggle(
             "active",
             l.getAttribute("href") === "#" + e.target.id,
-          ),
-        );
+          ), );
       }
     });
   },
