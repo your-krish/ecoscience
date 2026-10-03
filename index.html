@@ -1,1589 +1,487 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>EcoScience | Environmental Science Assignment 01</title>
-    <script>
-      try {
-        var t = localStorage.getItem("theme");
-        if (t) document.documentElement.setAttribute("data-theme", t);
-      } catch (e) {}
-    </script>
-    
-    <meta
-      name="description"
-      content="Environmental Science Assignment 01 - Second Year B.Tech IT, Winter 2026"
-    />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123C2A'/%3E%3Cpath d='M32 52C18 42 18 24 32 12c14 12 14 30 0 40z' fill='%233F7D58'/%3E%3Cpath d='M32 50V24' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E"
-    />
-    <meta name="theme-color" content="#123C2A" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="progress" aria-hidden="true"></div>
-    <nav class="dots" aria-label="Section navigation">
-      <a href="#top-of-page" data-label="Home" aria-label="Home"></a>
-      <a href="#overview" data-label="Overview" aria-label="Overview"></a>
-      <a
-        href="#ecosystems"
-        data-label="Unit I · Ecosystems"
-        aria-label="Unit I Ecosystems"
-      ></a>
-      <a
-        href="#resources"
-        data-label="Unit II · Natural Resources"
-        aria-label="Unit II Natural Resources"
-      ></a>
-      <a
-        href="#biodiversity"
-        data-label="Unit III · Biodiversity"
-        aria-label="Unit III Biodiversity"
-      ></a>
-      <a
-        href="#pollution"
-        data-label="Unit IV · Pollution"
-        aria-label="Unit IV Pollution"
-      ></a>
-      <a href="#conclusion" data-label="Conclusion" aria-label="Conclusion"></a>
-      <a href="#references" data-label="References" aria-label="References"></a>
-    </nav>
-    <nav>
-      <div class="wrap nav-in">
-        <a class="logo" href="#top-of-page"
-          ><i class="fa-solid fa-leaf" aria-hidden="true"></i> EcoScience</a
-        >
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoScience | Environmental Science Assignment 01</title>
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<meta name="description" content="Environmental Science Assignment 01 - Second Year B.Tech IT, Winter 2026">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23123C2A'/%3E%3Cpath d='M32 52C18 42 18 24 32 12c14 12 14 30 0 40z' fill='%233F7D58'/%3E%3Cpath d='M32 50V24' stroke='%23fff' stroke-width='3'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#123C2A">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="progress" aria-hidden="true"></div>
+<nav class="dots" aria-label="Section navigation">
+  <a href="#top-of-page" data-label="Home" aria-label="Home"></a>
+  <a href="#overview" data-label="Overview" aria-label="Overview"></a>
+  <a href="#ecosystems" data-label="Unit I · Ecosystems" aria-label="Unit I Ecosystems"></a>
+  <a href="#resources" data-label="Unit II · Natural Resources" aria-label="Unit II Natural Resources"></a>
+  <a href="#biodiversity" data-label="Unit III · Biodiversity" aria-label="Unit III Biodiversity"></a>
+  <a href="#pollution" data-label="Unit IV · Pollution" aria-label="Unit IV Pollution"></a>
+  <a href="#conclusion" data-label="Conclusion" aria-label="Conclusion"></a>
+  <a href="#references" data-label="References" aria-label="References"></a>
+</nav>
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#top-of-page"><i class="fa-solid fa-leaf" aria-hidden="true"></i> EcoScience</a>
         <ul class="links" id="menu">
-          <li><a href="#ecosystems">Ecosystems</a></li>
-          <li><a href="#resources">Natural Resources</a></li>
-          <li><a href="#biodiversity">Biodiversity</a></li>
-          <li><a href="#pollution">Pollution</a></li>
-          <li><a class="nav-cta" href="#overview">Explore</a></li>
+      <li><a href="#ecosystems">Ecosystems</a></li>
+      <li><a href="#resources">Natural Resources</a></li>
+      <li><a href="#biodiversity">Biodiversity</a></li>
+      <li><a href="#pollution">Pollution</a></li>
+      <li><a class="nav-cta" href="#overview">Explore</a></li>
+    </ul>
+    <div class="actions">
+      <button class="theme" id="theme" aria-label="Switch to dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
+      <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top-of-page">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    <i class="fa-solid fa-leaf drift d1"></i><i class="fa-solid fa-leaf drift d2"></i><i class="fa-solid fa-droplet drift d3"></i><i class="fa-solid fa-leaf drift d4"></i>
+  </div>
+  <div class="wrap">
+    <div class="fade">
+      <span class="badge">Assignment 01</span>
+      <h1>Environmental Science</h1>
+      <p>Understanding our environment through science, technology and sustainable design.</p>
+      <div class="meta">Second Year B.Tech IT · Semester III · Winter 2026</div>
+      <div class="group">
+        <span class="label">Submitted by · Group 3</span><br>
+        <span class="label">Class: SYIT - B </span>
+        <ul>
+          <li><span>25IT72</span> Krish Lahre</li>
+          <li><span>25IT73</span> Krish Karan</li>
+          <li><span>25IT74</span> Krishna Kesharwani</li>
+          <li><span>25IT75</span> Krishna Madhrele</li>
+          <li><span>25IT76</span> Krishna Shelke</li>
         </ul>
-        <div class="actions">
-          <button class="theme" id="theme" aria-label="Switch to dark mode">
-            <i class="fa-solid fa-moon" aria-hidden="true"></i>
-          </button>
-          <button
-            class="burger"
-            id="burger"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-            aria-controls="menu"
-          >
-            <i class="fa-solid fa-bars" aria-hidden="true"></i>
-          </button>
-        </div>
       </div>
-    </nav>
+      <a class="btn" href="#overview">Explore Assignment</a>
+    </div>
+  </div>
+</header>
 
-    <header class="hero" id="top-of-page">
-      <div class="hero-bg" aria-hidden="true">
-        <span class="blob b1"></span><span class="blob b2"></span
-        ><span class="blob b3"></span> <i class="fa-solid fa-leaf drift d1"></i
-        ><i class="fa-solid fa-leaf drift d2"></i
-        ><i class="fa-solid fa-droplet drift d3"></i
-        ><i class="fa-solid fa-leaf drift d4"></i>
+<main>
+<section id="overview">
+  <div class="wrap reveal">
+    <span class="label">Overview</span>
+    <h2>What this assignment covers ?</h2>
+    <p class="lead">One question per unit, select a unit to jump to its answer.</p>
+    <div class="grid g4">
+      <a class="card" href="#ecosystems"><span class="ico"><i class="fa-solid fa-tree" aria-hidden="true"></i></span><span class="label">Unit I</span><h4>Ecosystems</h4><p>Energy flow, cycling, succession and sustainable design.</p><span class="arr">→</span></a>
+      <a class="card" href="#resources"><span class="ico"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span><span class="label">Unit II</span><h4>Natural Resources</h4><p>Energy sources, overexploitation and conservation.</p><span class="arr">→</span></a>
+      <a class="card" href="#biodiversity"><span class="ico"><i class="fa-solid fa-dove" aria-hidden="true"></i></span><span class="label">Unit III</span><h4>Biodiversity</h4><p>India's regions, hotspots, values and fragmentation.</p><span class="arr">→</span></a>
+      <a class="card" href="#pollution"><span class="ico"><i class="fa-solid fa-industry" aria-hidden="true"></i></span><span class="label">Unit IV</span><h4>Pollution</h4><p>Bhopal case study and an integrated control plan.</p><span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIT I ============ -->
+<section id="ecosystems" style="background:var(--card)">
+  <div class="wave to-card" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap">
+    <div class="reveal unit-head">
+      <span class="unit-num" aria-hidden="true">01</span><i class="fa-solid fa-tree unit-ico" aria-hidden="true"></i>
+      <h2>Topic: Ecosystems</h2>
+      <p class="lead">Energy flow, biogeochemical cycling, ecological succession, and sustainable engineering design.</p>
+    </div>
+    <div class="question reveal">
+      <span class="label"><u>Question 1</u></span>
+      <p>Draw a detailed schematic diagram illustrating the <b>flow of energy</b> and <b>biogeochemical cycling</b> through a typical forest or aquatic ecosystem. Using this diagram, explain the concept of ecological succession and discuss how engineering design constraints can be aligned with ecosystem functions to develop eco-friendly, sustainable industrial products.</p>
+    </div>
+
+
+    <h3>Energy flow in an ecosystem</h3>
+    <p>Energy enters a forest ecosystem as sunlight, is captured by producers, and then passes one way through consumers. Only about 10% of the energy is transferred to the next trophic level; the rest is lost as heat through respiration.</p>
+    <figure class="diagram reveal">
+      <img src="assets/images/energy-flow.png" alt="Diagram of energy flow through a forest ecosystem">
+      <figcaption>Energy flow in a forest ecosystem</figcaption>
+    </figure>
+
+    <h3>Biogeochemical cycling</h3>
+    <p>Biogeochemical cycling is the continuous movement and recycling of essential elements between <b>living organisms and the non-living components of an ecosystem</b>, such as the atmosphere, soil and water. Unlike energy, which flows in one direction and is eventually lost as heat, <b>matter is continuously recycled</b> through an ecosystem.</p>
+    <figure class="diagram reveal">
+      <img src="assets/images/biogeochemical-cycle.png" alt="Diagram of the carbon cycle in a forest ecosystem">
+      <figcaption>Biogeochemical (carbon) cycle in a forest ecosystem</figcaption>
+    </figure>
+
+    <h4 style="margin-top:24px">Carbon cycle in a forest ecosystem</h4>
+    <p>The <b>carbon cycle</b> is an important example of biogeochemical cycling. In a forest ecosystem, carbon moves between the atmosphere, plants, animals, soil and water through several interconnected processes.</p>
+    <ol class="list reveal">
+      <li><b>Atmospheric carbon dioxide:</b> Carbon is present in the atmosphere mainly as carbon dioxide (CO₂).</li>
+      <li><b>Photosynthesis:</b> Green plants absorb atmospheric CO₂ and use sunlight to convert it into organic compounds during photosynthesis. This stores carbon in plant biomass.</li>
+      <li><b>Feeding:</b> Herbivores obtain carbon by consuming plants. Carnivores and other consumers acquire carbon by feeding on other organisms. Thus, carbon moves through the food chain.</li>
+      <li><b>Respiration:</b> Plants and animals release CO₂ back into the atmosphere during cellular respiration.</li>
+      <li><b>Death and waste:</b> When plants and animals die or produce waste, their organic matter becomes available for decomposition.</li>
+      <li><b>Decomposition:</b> Bacteria and fungi break down dead organic matter and waste. Carbon is transferred to the soil as organic carbon, while some carbon is released back into the atmosphere as CO₂.</li>
+      <li><b>Soil carbon:</b> Carbon can remain stored in soil as organic matter. Some dissolved carbon can also be transported through <b>leaching and runoff</b> into rivers, lakes and other water bodies.</li>
+      <li><b>Exchange with water:</b> Carbon dioxide and other forms of dissolved carbon can move between the atmosphere and water bodies, linking terrestrial and aquatic carbon reservoirs.</li>
+      <li><b>Combustion:</b> Forest fires and human activities such as burning fossil fuels release stored carbon back into the atmosphere as CO₂.</li>
+    </ol>
+
+    <h4 style="margin-top:24px">Importance of biogeochemical cycling</h4>
+    <p>Biogeochemical cycles maintain the availability of essential elements required for life and help ecosystems continue functioning. They connect producers, consumers, decomposers and the physical environment. Understanding these natural cycles also helps engineers design processes that <b>minimize waste, recover materials and reduce environmental impacts</b>.</p>
+    <div class="box"><p><b>Key principle:</b> <i>Energy flows through an ecosystem, while matter is recycled within the ecosystem.</i></p></div>
+
+    <h3>Ecological succession</h3>
+    <p>Ecological succession is the gradual and natural change in the composition and structure of an ecological community over time. As environmental conditions change, one group of organisms is gradually replaced by another, eventually forming a relatively stable and mature ecosystem.</p>
+    <p>In a forest ecosystem, succession generally progresses through several stages:</p>
+    <ol class="list reveal">
+      <li><b>Pioneer stage:</b> Hardy organisms such as lichens, mosses and small plants colonize a bare or disturbed area. They help initiate soil formation and improve the conditions for other organisms.</li>
+      <li><b>Grasses and herbs:</b> As soil and organic matter develop, grasses and herbs become established. They help stabilize the soil and add further organic material.</li>
+      <li><b>Shrub stage:</b> Shrubs develop as soil depth, nutrients and moisture increase. They provide additional habitat and shade.</li>
+      <li><b>Young forest:</b> Larger plants and fast-growing trees become established, creating a developing forest canopy and supporting a greater variety of organisms.</li>
+      <li><b>Mature ecosystem:</b> A relatively stable and complex community develops with multiple vegetation layers, established food webs and greater biodiversity.</li>
+    </ol>
+    <p>There are two major types of succession:</p>
+    <div class="grid g2 reveal">
+      <div class="card"><h4>Primary succession</h4><p>Begins on surfaces where soil is absent, such as newly exposed rock.</p></div>
+      <div class="card"><h4>Secondary succession</h4><p>Occurs where a previous community has been disturbed but soil remains, such as after a forest fire or abandonment of agricultural land. It is generally faster because soil, nutrients and some organisms may already be present.</p></div>
+    </div>
+    <div class="box"><p>The schematic above also shows an important ecosystem principle: <b>energy flows in one direction</b>, from the Sun to producers and then through different consumer levels. Energy decreases at each trophic level, with much of it released as heat. In contrast, <b>nutrients are recycled</b> through decomposers and returned to the soil, where they can again be absorbed by producers.</p></div>
+
+    <h3>Aligning engineering design with ecosystem functions</h3>
+    <p>Ecosystems can provide useful principles for designing sustainable industrial products. Engineers can treat environmental limitations such as energy use, material availability, waste generation and pollution as important design constraints rather than considering them only after production.</p>
+    <div class="tw reveal"><table>
+      <tr><th>Ecosystem function</th><th>Engineering design approach</th><th>Sustainable outcome</th></tr>
+      <tr><td>Efficient use of energy and resources</td><td>Minimize material and energy requirements during production and use</td><td>Lower resource consumption</td></tr>
+      <tr><td>Nutrient and material cycling</td><td>Design products for reuse, repair, recycling and recovery</td><td>Less waste and reduced raw-material demand</td></tr>
+      <tr><td>No waste in natural systems</td><td>Convert industrial by-products into useful inputs for other processes</td><td>Reduced industrial waste</td></tr>
+      <tr><td>Dependence on renewable energy</td><td>Use renewable energy and energy-efficient technologies</td><td>Lower dependence on finite resources</td></tr>
+      <tr><td>Adaptation and resilience</td><td>Design durable, modular and upgradeable products</td><td>Longer product life and less replacement waste</td></tr>
+    </table></div>
+    <p style="margin-top:20px">For example, <b>electronic products can be designed for easy disassembly</b>, allowing valuable components and materials to be recovered during e-waste recycling. Similarly, packaging can use recyclable or biodegradable materials, while <b>Life Cycle Assessment (LCA)</b> can be used to compare the environmental impacts of different product designs from raw-material extraction through manufacturing, use and disposal.</p>
+    <div class="box"><p>Thus, sustainable engineering aims to make industrial products more <b>resource-efficient, durable, repairable, recyclable and compatible with natural material cycles</b>. By aligning engineering constraints with ecosystem functions, industries can reduce environmental impacts while maintaining useful products and services for present and future generations.</p></div>
+
+    <div class="takeaway reveal"><span class="tk-ico"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><div><h4>Remember this</h4><p>Energy flows one way through an ecosystem and is lost as heat, while matter such as carbon and nutrients is recycled. Succession takes a community from pioneer species to a stable mature ecosystem, and sustainable engineering copies these natural cycles to cut waste.</p></div></div>
+
+    <div class="quiz reveal" data-quiz="ecosystems"></div>
+
+    <div class="next-wrap"><a class="btn next-unit" href="#resources">Next: Natural Resources <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+  </div>
+</section>
+
+<!-- ============ UNIT II ============ -->
+<section id="resources">
+  <div class="wave to-bg" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap">
+    <div class="reveal unit-head">
+      <span class="unit-num" aria-hidden="true">02</span><i class="fa-solid fa-solar-panel unit-ico" aria-hidden="true"></i>
+      <h2>Topic: Natural Resources</h2>
+      <p class="lead">Energy sources, the cost of overexploitation, and what individuals can do about it.</p>
+    </div>
+    <div class="question reveal">
+      <span class="label"><u>Question 2</u></span>
+      <p>Conduct a comparative analysis between <b>renewable and non-renewable energy resources</b> in the context of modern industrialization. Evaluate the long-term ecological significance of overexploiting land and water resources, and propose three distinct individual conservation strategies that can be adopted to ensure the equitable use of these resources for a sustainable lifestyle.</p>
+    </div>
+
+    <h3>Renewable vs non-renewable energy</h3>
+    <div class="grid g2 split reveal">
+      <div class="card r"><h4>Renewable</h4><p>Solar, wind, hydropower, biomass, geothermal.</p></div>
+      <div class="card n"><h4>Non-renewable</h4><p>Coal, petroleum, natural gas, nuclear fuel (uranium).</p></div>
+    </div>
+    <div class="tw" style="margin-top:20px"><table>
+      <tr><th>Parameter</th><th>Renewable</th><th>Non-renewable</th></tr>
+      <tr><td>Availability</td><td>Practically inexhaustible; depends on location and weather</td><td>Finite reserves that are being depleted</td></tr>
+      <tr><td>Replenishment</td><td>Natural and continuous</td><td>Takes millions of years</td></tr>
+      <tr><td>Environmental impact</td><td>Low emissions in operation; land, habitat and material use for setup</td><td>High CO₂, SO₂ and particulates; mining and spill damage</td></tr>
+      <tr><td>Examples</td><td>Solar PV, wind turbines, small hydro</td><td>Coal power plants, petrol and diesel engines</td></tr>
+      <tr><td>Industrial relevance</td><td>Needs storage and grid upgrades; cost falling; supports low-carbon manufacturing</td><td>Reliable, dense energy and existing infrastructure; carbon and price risk</td></tr>
+    </table></div>
+    <div class="box"><p>Modern industry still relies heavily on fossil fuels because of reliability and infrastructure. A long-term sustainable mix shifts towards renewables, with efficiency gains and storage.</p></div>
+
+    <h3>Long-term ecological effects of overexploitation</h3>
+    <div class="grid g2">
+      <div class="panel land reveal"><h4>Land</h4><ul><li>Soil degradation and loss of fertility</li><li>Erosion and desertification</li><li>Deforestation and habitat destruction</li><li>Reduced carbon storage, altered local climate</li></ul></div>
+      <div class="panel water reveal"><h4>Water</h4><ul><li>Groundwater depletion and falling water tables</li><li>Water pollution and salinity</li><li>Reduced availability for people and industry</li><li>Stress on rivers, wetlands and aquatic life</li></ul></div>
+    </div>
+
+    <h3>Three individual conservation strategies</h3>
+    <p>Each supports equitable use: what one person saves stays available for others and for future generations.</p>
+    <div class="steps reveal">
+      <div class="card"><h4>Save water and harvest rain</h4><p>Fix leaks, use water-efficient fixtures, reuse greywater, install rooftop rainwater harvesting.</p><p><b>Why it helps:</b> recharges groundwater and lowers demand on shared supplies.</p></div>
+      <div class="card"><h4>Cut energy use and switch to renewables</h4><p>Use LED lighting and efficient appliances, use public transport, add rooftop solar where possible.</p><p><b>Why it helps:</b> reduces fossil fuel demand and emissions.</p></div>
+      <div class="card"><h4>Reduce, reuse, recycle and buy responsibly</h4><p>Avoid single-use items, compost food waste, repair and recycle electronics, prefer local and certified products.</p><p><b>Why it helps:</b> lowers pressure on land and raw materials.</p></div>
+    </div>
+
+    <div class="takeaway reveal"><span class="tk-ico"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><div><h4>Remember this</h4><p>Renewable resources replenish naturally while fossil fuels are finite. Overusing land and water causes long-term ecological damage, and simple individual actions such as saving water, cutting energy use and reducing waste support equitable use.</p></div></div>
+
+    <div class="quiz reveal" data-quiz="resources"></div>
+
+    <div class="next-wrap"><a class="btn next-unit" href="#biodiversity">Next: Biodiversity <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+  </div>
+</section>
+
+<!-- ============ UNIT III ============ -->
+<section id="biodiversity" style="background:var(--card)">
+  <div class="wave to-card" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap">
+    <div class="reveal unit-head">
+      <span class="unit-num" aria-hidden="true">03</span><i class="fa-solid fa-paw unit-ico" aria-hidden="true"></i>
+      <h2>Topic: Biodiversity</h2>
+      <p class="lead">India's biogeographic regions, hotspots, the values of biodiversity and the threat of fragmentation.</p>
+    </div>
+    <div class="question reveal">
+      <span class="label"><u>Question 3</u></span>
+      <p>Analyze the <b>biogeographical classification of India</b> and identify the major biodiversity hot spots within the country. Discuss the distinct values of biodiversity (consumptive, productive, social, and ethical) at local and national levels, and explain how habitat fragmentation threatens genetic and species diversity.</p>
+    </div>
+
+    <h3>India at a glance</h3>
+    <div class="glance reveal">
+      <div class="gl"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><b data-count="10">0</b><span>Biogeographic zones</span></div>
+      <div class="gl"><i class="fa-solid fa-leaf" aria-hidden="true"></i><b data-count="4">0</b><span>Biodiversity hotspots in India</span></div>
+      <div class="gl"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i><b data-count="4">0</b><span>Types of biodiversity value</span></div>
+      <div class="gl"><i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i><b data-count="70" data-suffix="%">0</b><span>Minimum habitat loss for hotspot status</span></div>
+    </div>
+
+    <h3>Biogeographical classification of India</h3>
+    <p>India is commonly divided into ten biogeographic zones (Rodgers and Panwar, Wildlife Institute of India). Use the arrows to browse them.</p>
+    <div class="zones reveal" role="region" aria-roledescription="carousel" aria-label="Biogeographic zones of India">
+      <div class="stack" tabindex="0">
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://peakvisor.com/photo/SD/Trans-Himalaya-Kailash.jpg" alt="Trans-Himalaya biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 1 of 10</span><h4>Trans-Himalaya</h4><p>Cold, arid Ladakh and Lahaul-Spiti; snow leopard, ibex.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://wallpaperswide.com/download/peaks_in_himalaya-wallpaper-3200x2400.jpg" alt="Himalaya biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 2 of 10</span><h4>Himalaya</h4><p>Forests and alpine zones from foothills to snowline.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://cdn.britannica.com/44/162744-050-ADEB53F2/Thar-Desert-India-Rajasthan.jpg" alt="Desert biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 3 of 10</span><h4>Desert</h4><p>Thar and Kutch; hardy, drought-adapted species.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://geographyandyou.com/media/2023/07/Thar%20Desert%20Photograph%201.jpg" alt="Semi-arid biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 4 of 10</span><h4>Semi-arid</h4><p>Grasslands and scrub between desert and plains.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://lifeonweekends.com/wp-content/uploads/2023/05/img_0552.jpg?w=1600" alt="Western Ghats biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 5 of 10</span><h4>Western Ghats</h4><p>Wet evergreen forests; very high endemism.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://www.worldatlas.com/r/w2560-q80/upload/20/35/6b/shutterstock-1554682088.jpg" alt="Deccan Peninsula biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 6 of 10</span><h4>Deccan Peninsula</h4><p>Largest zone; dry and moist deciduous forests.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://images.careerindia.com/img/2024/10/mj_image_web_1728168062254-600x338.jpg" alt="Gangetic Plain biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 7 of 10</span><h4>Gangetic Plain</h4><p>Fertile alluvial plains and riverine ecosystems.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://static.toiimg.com/photo/109986991.cms" alt="Coasts biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 8 of 10</span><h4>Coasts</h4><p>Mangroves, estuaries, beaches and lagoons.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://imgcld.yatra.com/ytimages/image/upload/v1517482331/AdvNation/ANN_DES80/ann_top_Meghalaya_nosmmU.jpg" alt="North-East biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 9 of 10</span><h4>North-East</h4><p>Hills and rainforests linking India to Southeast Asia.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://c.ndtvimg.com/2025-12/90qloaio_travel_625x300_31_December_25.jpg?im=FeatureCrop,algorithm=dnn,width=400,height=225&q=70" alt="Islands biogeographic zone of India" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Zone 10 of 10</span><h4>Islands</h4><p>Andaman, Nicobar and Lakshadweep.</p></div>
+        </article>
       </div>
-      <div class="wrap">
-        <div class="fade">
-          <span class="badge">Assignment 01</span>
-          <h1>Environmental Science</h1>
-          <p>
-            Understanding our environment through science, technology and
-            sustainable design.
-          </p>
-          <div class="meta">
-            Second Year B.Tech IT · Semester III · Winter 2026
-          </div>
-          <div class="group">
-            <span class="label">Submitted by · Group 3</span><br />
-            <span class="label">Class: SYIT - B </span>
-            <ul>
-              <li><span>25IT72</span> Krish Lahre</li>
-              <li><span>25IT73</span> Krish Karan</li>
-              <li><span>25IT74</span> Krishna Kesharwani</li>
-              <li><span>25IT75</span> Krishna Madhrele</li>
-              <li><span>25IT76</span> Krishna Shelke</li>
-            </ul>
-          </div>
-          <a class="btn" href="#overview">Explore Assignment</a>
-          <div class="hero-chips">
-            <a class="chip" href="#ecosystems"
-              ><i class="fa-solid fa-tree" aria-hidden="true"></i> Ecosystems</a
-            >
-            <a class="chip" href="#resources"
-              ><i class="fa-solid fa-solar-panel" aria-hidden="true"></i>
-              Natural Resources</a
-            >
-            <a class="chip" href="#biodiversity"
-              ><i class="fa-solid fa-paw" aria-hidden="true"></i>
-              Biodiversity</a
-            >
-            <a class="chip" href="#pollution"
-              ><i class="fa-solid fa-smog" aria-hidden="true"></i> Pollution</a
-            >
-          </div>
-        </div>
+      <div class="zctrl">
+        <button class="zbtn zprev" aria-label="Previous zone"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <span class="zcount" aria-live="polite">1 / 10</span>
+        <button class="zbtn znext" aria-label="Next zone"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
       </div>
-    </header>
+    </div>
 
-    <main>
-      <section id="overview">
-        <div class="wrap reveal">
-          <span class="label">Overview</span>
-          <h2>What this assignment covers</h2>
-          <p class="lead">
-            One question per unit, select a unit
-            to jump to its answer.
-          </p>
-          <div class="grid g4">
-            <a class="card" href="#ecosystems"
-              ><span class="ico"
-                ><i class="fa-solid fa-tree" aria-hidden="true"></i></span
-              ><span class="label">Unit I</span>
-              <h4>Ecosystems</h4>
-              <p>Energy flow, cycling, succession and sustainable design.</p>
-              <span class="arr">→</span></a
-            >
-            <a class="card" href="#resources"
-              ><span class="ico"
-                ><i class="fa-solid fa-droplet" aria-hidden="true"></i></span
-              ><span class="label">Unit II</span>
-              <h4>Natural Resources</h4>
-              <p>Energy sources, overexploitation and conservation.</p>
-              <span class="arr">→</span></a
-            >
-            <a class="card" href="#biodiversity"
-              ><span class="ico"
-                ><i class="fa-solid fa-dove" aria-hidden="true"></i></span
-              ><span class="label">Unit III</span>
-              <h4>Biodiversity</h4>
-              <p>India's regions, hotspots, values and fragmentation.</p>
-              <span class="arr">→</span></a
-            >
-            <a class="card" href="#pollution"
-              ><span class="ico"
-                ><i class="fa-solid fa-industry" aria-hidden="true"></i></span
-              ><span class="label">Unit IV</span>
-              <h4>Pollution</h4>
-              <p>Bhopal case study and an integrated control plan.</p>
-              <span class="arr">→</span></a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ UNIT I ============ -->
-      <section id="ecosystems" style="background: var(--card)">
-        <div class="wave to-card" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap">
-          <div class="reveal unit-head">
-            <span class="unit-num" aria-hidden="true">01</span
-            ><i class="fa-solid fa-tree unit-ico" aria-hidden="true"></i>
-            <h2>Topic: Ecosystems</h2>
-            <p class="lead">
-              Energy flow, biogeochemical cycling, ecological succession, and
-              sustainable engineering design.
-            </p>
-          </div>
-          <div class="question reveal">
-            <span class="label"><u>Question 1</u></span>
-            <p>
-              Draw a detailed schematic diagram illustrating the
-              <b>flow of energy</b> and <b>biogeochemical cycling</b> through a
-              typical forest or aquatic ecosystem. Using this diagram, explain
-              the concept of ecological succession and discuss how engineering
-              design constraints can be aligned with ecosystem functions to
-              develop eco-friendly, sustainable industrial products.
-            </p>
-          </div>
-
-          <h3>Energy flow in an ecosystem</h3>
-          <p>
-            Energy enters a forest ecosystem as sunlight, is captured by
-            producers, and then passes one way through consumers. Only about 10%
-            of the energy is transferred to the next trophic level; the rest is
-            lost as heat through respiration.
-          </p>
-          <figure class="diagram reveal">
-            <img
-              src="assets/images/energy-flow.png"
-              alt="Diagram of energy flow through a forest ecosystem"
-            />
-            <figcaption>Energy flow in a forest ecosystem</figcaption>
-          </figure>
-
-          <h3>Biogeochemical cycling</h3>
-          <p>
-            Biogeochemical cycling is the continuous movement and recycling of
-            essential elements between
-            <b>living organisms and the non-living components of an ecosystem</b
-            >, such as the atmosphere, soil and water. Unlike energy, which
-            flows in one direction and is eventually lost as heat,
-            <b>matter is continuously recycled</b> through an ecosystem.
-          </p>
-          <figure class="diagram reveal">
-            <img
-              src="assets/images/biogeochemical-cycle.png"
-              alt="Diagram of the carbon cycle in a forest ecosystem"
-            />
-            <figcaption>
-              Biogeochemical (carbon) cycle in a forest ecosystem
-            </figcaption>
-          </figure>
-
-          <h4 style="margin-top: 24px">Carbon cycle in a forest ecosystem</h4>
-          <p>
-            The <b>carbon cycle</b> is an important example of biogeochemical
-            cycling. In a forest ecosystem, carbon moves between the atmosphere,
-            plants, animals, soil and water through several interconnected
-            processes.
-          </p>
-          <ol class="list reveal">
-            <li>
-              <b>Atmospheric carbon dioxide:</b> Carbon is present in the
-              atmosphere mainly as carbon dioxide (CO₂).
-            </li>
-            <li>
-              <b>Photosynthesis:</b> Green plants absorb atmospheric CO₂ and use
-              sunlight to convert it into organic compounds during
-              photosynthesis. This stores carbon in plant biomass.
-            </li>
-            <li>
-              <b>Feeding:</b> Herbivores obtain carbon by consuming plants.
-              Carnivores and other consumers acquire carbon by feeding on other
-              organisms. Thus, carbon moves through the food chain.
-            </li>
-            <li>
-              <b>Respiration:</b> Plants and animals release CO₂ back into the
-              atmosphere during cellular respiration.
-            </li>
-            <li>
-              <b>Death and waste:</b> When plants and animals die or produce
-              waste, their organic matter becomes available for decomposition.
-            </li>
-            <li>
-              <b>Decomposition:</b> Bacteria and fungi break down dead organic
-              matter and waste. Carbon is transferred to the soil as organic
-              carbon, while some carbon is released back into the atmosphere as
-              CO₂.
-            </li>
-            <li>
-              <b>Soil carbon:</b> Carbon can remain stored in soil as organic
-              matter. Some dissolved carbon can also be transported through
-              <b>leaching and runoff</b> into rivers, lakes and other water
-              bodies.
-            </li>
-            <li>
-              <b>Exchange with water:</b> Carbon dioxide and other forms of
-              dissolved carbon can move between the atmosphere and water bodies,
-              linking terrestrial and aquatic carbon reservoirs.
-            </li>
-            <li>
-              <b>Combustion:</b> Forest fires and human activities such as
-              burning fossil fuels release stored carbon back into the
-              atmosphere as CO₂.
-            </li>
-          </ol>
-
-          <h4 style="margin-top: 24px">Importance of biogeochemical cycling</h4>
-          <p>
-            Biogeochemical cycles maintain the availability of essential
-            elements required for life and help ecosystems continue functioning.
-            They connect producers, consumers, decomposers and the physical
-            environment. Understanding these natural cycles also helps engineers
-            design processes that
-            <b
-              >minimize waste, recover materials and reduce environmental
-              impacts</b
-            >.
-          </p>
-          <div class="box">
-            <p>
-              <b>Key principle:</b>
-              <i
-                >Energy flows through an ecosystem, while matter is recycled
-                within the ecosystem.</i
-              >
-            </p>
-          </div>
-
-          <h3>Ecological succession</h3>
-          <p>
-            Ecological succession is the gradual and natural change in the
-            composition and structure of an ecological community over time. As
-            environmental conditions change, one group of organisms is gradually
-            replaced by another, eventually forming a relatively stable and
-            mature ecosystem.
-          </p>
-          <p>
-            In a forest ecosystem, succession generally progresses through
-            several stages:
-          </p>
-          <ol class="list reveal">
-            <li>
-              <b>Pioneer stage:</b> Hardy organisms such as lichens, mosses and
-              small plants colonize a bare or disturbed area. They help initiate
-              soil formation and improve the conditions for other organisms.
-            </li>
-            <li>
-              <b>Grasses and herbs:</b> As soil and organic matter develop,
-              grasses and herbs become established. They help stabilize the soil
-              and add further organic material.
-            </li>
-            <li>
-              <b>Shrub stage:</b> Shrubs develop as soil depth, nutrients and
-              moisture increase. They provide additional habitat and shade.
-            </li>
-            <li>
-              <b>Young forest:</b> Larger plants and fast-growing trees become
-              established, creating a developing forest canopy and supporting a
-              greater variety of organisms.
-            </li>
-            <li>
-              <b>Mature ecosystem:</b> A relatively stable and complex community
-              develops with multiple vegetation layers, established food webs
-              and greater biodiversity.
-            </li>
-          </ol>
-          <p>There are two major types of succession:</p>
-          <div class="grid g2 reveal">
-            <div class="card">
-              <h4>Primary succession</h4>
-              <p>
-                Begins on surfaces where soil is absent, such as newly exposed
-                rock.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Secondary succession</h4>
-              <p>
-                Occurs where a previous community has been disturbed but soil
-                remains, such as after a forest fire or abandonment of
-                agricultural land. It is generally faster because soil,
-                nutrients and some organisms may already be present.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <p>
-              The schematic above also shows an important ecosystem principle:
-              <b>energy flows in one direction</b>, from the Sun to producers
-              and then through different consumer levels. Energy decreases at
-              each trophic level, with much of it released as heat. In contrast,
-              <b>nutrients are recycled</b> through decomposers and returned to
-              the soil, where they can again be absorbed by producers.
-            </p>
-          </div>
-
-          <h3>Aligning engineering design with ecosystem functions</h3>
-          <p>
-            Ecosystems can provide useful principles for designing sustainable
-            industrial products. Engineers can treat environmental limitations
-            such as energy use, material availability, waste generation and
-            pollution as important design constraints rather than considering
-            them only after production.
-          </p>
-          <div class="tw reveal">
-            <table>
-              <tr>
-                <th>Ecosystem function</th>
-                <th>Engineering design approach</th>
-                <th>Sustainable outcome</th>
-              </tr>
-              <tr>
-                <td>Efficient use of energy and resources</td>
-                <td>
-                  Minimize material and energy requirements during production
-                  and use
-                </td>
-                <td>Lower resource consumption</td>
-              </tr>
-              <tr>
-                <td>Nutrient and material cycling</td>
-                <td>
-                  Design products for reuse, repair, recycling and recovery
-                </td>
-                <td>Less waste and reduced raw-material demand</td>
-              </tr>
-              <tr>
-                <td>No waste in natural systems</td>
-                <td>
-                  Convert industrial by-products into useful inputs for other
-                  processes
-                </td>
-                <td>Reduced industrial waste</td>
-              </tr>
-              <tr>
-                <td>Dependence on renewable energy</td>
-                <td>Use renewable energy and energy-efficient technologies</td>
-                <td>Lower dependence on finite resources</td>
-              </tr>
-              <tr>
-                <td>Adaptation and resilience</td>
-                <td>Design durable, modular and upgradeable products</td>
-                <td>Longer product life and less replacement waste</td>
-              </tr>
-            </table>
-          </div>
-          <p style="margin-top: 20px">
-            For example,
-            <b>electronic products can be designed for easy disassembly</b>,
-            allowing valuable components and materials to be recovered during
-            e-waste recycling. Similarly, packaging can use recyclable or
-            biodegradable materials, while
-            <b>Life Cycle Assessment (LCA)</b> can be used to compare the
-            environmental impacts of different product designs from raw-material
-            extraction through manufacturing, use and disposal.
-          </p>
-          <div class="box">
-            <p>
-              Thus, sustainable engineering aims to make industrial products
-              more
-              <b
-                >resource-efficient, durable, repairable, recyclable and
-                compatible with natural material cycles</b
-              >. By aligning engineering constraints with ecosystem functions,
-              industries can reduce environmental impacts while maintaining
-              useful products and services for present and future generations.
-            </p>
-          </div>
-
-          <div class="takeaway reveal">
-            <span class="tk-ico"
-              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i
-            ></span>
-            <div>
-              <h4>Remember this</h4>
-              <p>
-                Energy flows one way through an ecosystem and is lost as heat,
-                while matter such as carbon and nutrients is recycled.
-                Succession takes a community from pioneer species to a stable
-                mature ecosystem, and sustainable engineering copies these
-                natural cycles to cut waste.
-              </p>
-            </div>
-          </div>
-
-          <div class="quiz reveal" data-quiz="ecosystems"></div>
-
-          <div class="next-wrap">
-            <a class="btn next-unit" href="#resources"
-              >Next: Natural Resources
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-            ></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ UNIT II ============ -->
-      <section id="resources">
-        <div class="wave to-bg" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap">
-          <div class="reveal unit-head">
-            <span class="unit-num" aria-hidden="true">02</span
-            ><i class="fa-solid fa-solar-panel unit-ico" aria-hidden="true"></i>
-            <h2>Topic: Natural Resources</h2>
-            <p class="lead">
-              Energy sources, the cost of overexploitation, and what individuals
-              can do about it.
-            </p>
-          </div>
-          <div class="question reveal">
-            <span class="label"><u>Question 2</u></span>
-            <p>
-              Conduct a comparative analysis between
-              <b>renewable and non-renewable energy resources</b> in the context
-              of modern industrialization. Evaluate the long-term ecological
-              significance of overexploiting land and water resources, and
-              propose three distinct individual conservation strategies that can
-              be adopted to ensure the equitable use of these resources for a
-              sustainable lifestyle.
-            </p>
-          </div>
-
-          <h3>Renewable vs non-renewable energy</h3>
-          <div class="tabs reveal" data-tabs>
-            <div
-              class="tab-list switch"
-              role="tablist"
-              aria-label="Energy type"
-            >
-              <button
-                role="tab"
-                id="t-ren"
-                aria-selected="true"
-                aria-controls="p-ren"
-              >
-                <i class="fa-solid fa-sun" aria-hidden="true"></i> Renewable
-              </button>
-              <button
-                role="tab"
-                id="t-non"
-                aria-selected="false"
-                aria-controls="p-non"
-              >
-                <i class="fa-solid fa-gas-pump" aria-hidden="true"></i>
-                Non-renewable
-              </button>
-              <span class="tab-ind"></span>
-            </div>
-            <div
-              class="tab-panel card r"
-              id="p-ren"
-              role="tabpanel"
-              aria-labelledby="t-ren"
-            >
-              <h4>Renewable energy resources</h4>
-              <p>Solar, wind, hydropower, biomass, geothermal.</p>
-              <ul>
-                <li>
-                  Practically inexhaustible; depends on location and weather
-                </li>
-                <li>Replenished naturally and continuously</li>
-                <li>
-                  Low emissions in operation; land, habitat and material use for
-                  setup
-                </li>
-              </ul>
-            </div>
-            <div
-              class="tab-panel card n"
-              id="p-non"
-              role="tabpanel"
-              aria-labelledby="t-non"
-              hidden
-            >
-              <h4>Non-renewable energy resources</h4>
-              <p>Coal, petroleum, natural gas, nuclear fuel (uranium).</p>
-              <ul>
-                <li>Finite reserves that are being depleted</li>
-                <li>Take millions of years to form</li>
-                <li>High CO₂, SO₂ and particulates; mining and spill damage</li>
-              </ul>
-            </div>
-          </div>
-          <div class="tw" style="margin-top: 20px">
-            <table>
-              <tr>
-                <th>Parameter</th>
-                <th>Renewable</th>
-                <th>Non-renewable</th>
-              </tr>
-              <tr>
-                <td>Availability</td>
-                <td>
-                  Practically inexhaustible; depends on location and weather
-                </td>
-                <td>Finite reserves that are being depleted</td>
-              </tr>
-              <tr>
-                <td>Replenishment</td>
-                <td>Natural and continuous</td>
-                <td>Takes millions of years</td>
-              </tr>
-              <tr>
-                <td>Environmental impact</td>
-                <td>
-                  Low emissions in operation; land, habitat and material use for
-                  setup
-                </td>
-                <td>High CO₂, SO₂ and particulates; mining and spill damage</td>
-              </tr>
-              <tr>
-                <td>Examples</td>
-                <td>Solar PV, wind turbines, small hydro</td>
-                <td>Coal power plants, petrol and diesel engines</td>
-              </tr>
-              <tr>
-                <td>Industrial relevance</td>
-                <td>
-                  Needs storage and grid upgrades; cost falling; supports
-                  low-carbon manufacturing
-                </td>
-                <td>
-                  Reliable, dense energy and existing infrastructure; carbon and
-                  price risk
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="box">
-            <p>
-              Modern industry still relies heavily on fossil fuels because of
-              reliability and infrastructure. A long-term sustainable mix shifts
-              towards renewables, with efficiency gains and storage.
-            </p>
-          </div>
-
-          <h3>Long-term ecological effects of overexploitation</h3>
-          <div class="tabs reveal" data-tabs>
-            <div class="tab-list" role="tablist" aria-label="Resource type">
-              <button
-                role="tab"
-                id="t-land"
-                aria-selected="true"
-                aria-controls="p-land"
-              >
-                <i class="fa-solid fa-mountain" aria-hidden="true"></i> Land
-              </button>
-              <button
-                role="tab"
-                id="t-water"
-                aria-selected="false"
-                aria-controls="p-water"
-              >
-                <i class="fa-solid fa-droplet" aria-hidden="true"></i> Water
-              </button>
-              <span class="tab-ind"></span>
-            </div>
-            <div
-              class="tab-panel panel land"
-              id="p-land"
-              role="tabpanel"
-              aria-labelledby="t-land"
-            >
-              <h4>Land</h4>
-              <ul>
-                <li>Soil degradation and loss of fertility</li>
-                <li>Erosion and desertification</li>
-                <li>Deforestation and habitat destruction</li>
-                <li>Reduced carbon storage, altered local climate</li>
-              </ul>
-            </div>
-            <div
-              class="tab-panel panel water"
-              id="p-water"
-              role="tabpanel"
-              aria-labelledby="t-water"
-              hidden
-            >
-              <h4>Water</h4>
-              <ul>
-                <li>Groundwater depletion and falling water tables</li>
-                <li>Water pollution and salinity</li>
-                <li>Reduced availability for people and industry</li>
-                <li>Stress on rivers, wetlands and aquatic life</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3>Three individual conservation strategies</h3>
-          <p>
-            Each supports equitable use: what one person saves stays available
-            for others and for future generations.
-          </p>
-          <div class="steps reveal">
-            <div class="card">
-              <h4>Save water and harvest rain</h4>
-              <p>
-                Fix leaks, use water-efficient fixtures, reuse greywater,
-                install rooftop rainwater harvesting.
-              </p>
-              <p>
-                <b>Why it helps:</b> recharges groundwater and lowers demand on
-                shared supplies.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Cut energy use and switch to renewables</h4>
-              <p>
-                Use LED lighting and efficient appliances, use public transport,
-                add rooftop solar where possible.
-              </p>
-              <p>
-                <b>Why it helps:</b> reduces fossil fuel demand and emissions.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Reduce, reuse, recycle and buy responsibly</h4>
-              <p>
-                Avoid single-use items, compost food waste, repair and recycle
-                electronics, prefer local and certified products.
-              </p>
-              <p>
-                <b>Why it helps:</b> lowers pressure on land and raw materials.
-              </p>
-            </div>
-          </div>
-
-          <div class="takeaway reveal">
-            <span class="tk-ico"
-              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i
-            ></span>
-            <div>
-              <h4>Remember this</h4>
-              <p>
-                Renewable resources replenish naturally while fossil fuels are
-                finite. Overusing land and water causes long-term ecological
-                damage, and simple individual actions such as saving water,
-                cutting energy use and reducing waste support equitable use.
-              </p>
-            </div>
-          </div>
-
-          <div class="quiz reveal" data-quiz="resources"></div>
-
-          <div class="next-wrap">
-            <a class="btn next-unit" href="#biodiversity"
-              >Next: Biodiversity
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-            ></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ UNIT III ============ --> 
-      <section id="biodiversity" style="background: var(--card)">
-        <div class="wave to-card" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap">
-          <div class="reveal unit-head">
-            <span class="unit-num" aria-hidden="true">03</span
-            ><i class="fa-solid fa-paw unit-ico" aria-hidden="true"></i>
-            <h2>Topic: Biodiversity</h2>
-            <p class="lead">
-              India's biogeographic regions, hotspots, the values of
-              biodiversity and the threat of fragmentation.
-            </p>
-          </div>
-          <div class="question reveal">
-            <span class="label"><u>Question 3</u></span>
-            <p>
-              Analyze the <b>biogeographical classification of India</b> and
-              identify the major biodiversity hot spots within the country.
-              Discuss the distinct values of biodiversity (consumptive,
-              productive, social, and ethical) at local and national levels, and
-              explain how habitat fragmentation threatens genetic and species
-              diversity.
-            </p>
-          </div>
-
-          <h3>India at a glance</h3>
-          <div class="glance reveal">
-            <div class="gl">
-              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i
-              ><b data-count="10">0</b><span>Biogeographic zones</span>
-            </div>
-            <div class="gl">
-              <i class="fa-solid fa-leaf" aria-hidden="true"></i
-              ><b data-count="4">0</b
-              ><span>Biodiversity hotspots in India</span>
-            </div>
-            <div class="gl">
-              <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i
-              ><b data-count="4">0</b><span>Types of biodiversity value</span>
-            </div>
-            <div class="gl">
-              <i class="fa-solid fa-arrow-trend-down" aria-hidden="true"></i
-              ><b data-count="70" data-suffix="%">0</b
-              ><span>Minimum habitat loss for hotspot status</span>
-            </div>
-          </div>
-
-          <h3>Biogeographical classification of India</h3>
-          <p>
-            India is commonly divided into ten biogeographic zones (Rodgers and
-            Panwar, Wildlife Institute of India). Use the arrows to browse them.
-          </p>
-          <div
-            class="zones reveal"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="Biogeographic zones of India"
-          >
-            <div class="stack" tabindex="0">
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://peakvisor.com/photo/SD/Trans-Himalaya-Kailash.jpg"
-                    alt="Trans-Himalaya biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 1 of 10</span>
-                  <h4>Trans-Himalaya</h4>
-                  <p>Cold, arid Ladakh and Lahaul-Spiti; snow leopard, ibex.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://wallpaperswide.com/download/peaks_in_himalaya-wallpaper-3200x2400.jpg"
-                    alt="Himalaya biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 2 of 10</span>
-                  <h4>Himalaya</h4>
-                  <p>Forests and alpine zones from foothills to snowline.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://cdn.britannica.com/44/162744-050-ADEB53F2/Thar-Desert-India-Rajasthan.jpg"
-                    alt="Desert biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 3 of 10</span>
-                  <h4>Desert</h4>
-                  <p>Thar and Kutch; hardy, drought-adapted species.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://geographyandyou.com/media/2023/07/Thar%20Desert%20Photograph%201.jpg"
-                    alt="Semi-arid biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 4 of 10</span>
-                  <h4>Semi-arid</h4>
-                  <p>Grasslands and scrub between desert and plains.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://lifeonweekends.com/wp-content/uploads/2023/05/img_0552.jpg?w=1600"
-                    alt="Western Ghats biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 5 of 10</span>
-                  <h4>Western Ghats</h4>
-                  <p>Wet evergreen forests; very high endemism.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://www.worldatlas.com/r/w2560-q80/upload/20/35/6b/shutterstock-1554682088.jpg"
-                    alt="Deccan Peninsula biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 6 of 10</span>
-                  <h4>Deccan Peninsula</h4>
-                  <p>Largest zone; dry and moist deciduous forests.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://images.careerindia.com/img/2024/10/mj_image_web_1728168062254-600x338.jpg"
-                    alt="Gangetic Plain biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 7 of 10</span>
-                  <h4>Gangetic Plain</h4>
-                  <p>Fertile alluvial plains and riverine ecosystems.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://static.toiimg.com/photo/109986991.cms"
-                    alt="Coasts biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 8 of 10</span>
-                  <h4>Coasts</h4>
-                  <p>Mangroves, estuaries, beaches and lagoons.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://imgcld.yatra.com/ytimages/image/upload/v1517482331/AdvNation/ANN_DES80/ann_top_Meghalaya_nosmmU.jpg"
-                    alt="North-East biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 9 of 10</span>
-                  <h4>North-East</h4>
-                  <p>Hills and rainforests linking India to Southeast Asia.</p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://c.ndtvimg.com/2025-12/90qloaio_travel_625x300_31_December_25.jpg?im=FeatureCrop,algorithm=dnn,width=400,height=225&q=70"
-                    alt="Islands biogeographic zone of India"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Zone 10 of 10</span>
-                  <h4>Islands</h4>
-                  <p>Andaman, Nicobar and Lakshadweep.</p>
-                </div>
-              </article>
-            </div>
-            <div class="zctrl">
-              <button class="zbtn zprev" aria-label="Previous zone">
-                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-              </button>
-              <span class="zcount" aria-live="polite">1 / 10</span>
-              <button class="zbtn znext" aria-label="Next zone">
-                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-
-          <h3>Major biodiversity hotspots in India</h3>
-          <p>
-            A hotspot has high endemism (at least 1,500 endemic plant species)
-            and has lost at least 70% of its original habitat (Myers et al.).
-          </p>
-          <div
-            class="zones reveal"
-            role="region"
-            aria-roledescription="carousel"
-            aria-label="Biodiversity hotspots in India"
-          >
-            <div class="stack" tabindex="0">
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://www.naturesafariindia.com/wp-content/uploads/2022/12/Himalayan-ranges-in-India.webp"
-                    alt="Himalaya biodiversity hotspot"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Hotspot 1 of 4</span>
-                  <h4>Himalaya</h4>
-                  <p>
-                    Northern and north-eastern Himalayan range. Rich in endemic
-                    plants and medicinal species.
-                  </p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTceoXgzzLGnaO7y4RorSuWbIcSU5hzIf4hxvAtEO6xrNSGU12WGwfZb3y9&s=10"
-                    alt="Indo-Burma biodiversity hotspot"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Hotspot 2 of 4</span>
-                  <h4>Indo-Burma</h4>
-                  <p>
-                    India's north-east and beyond. Many endemic freshwater
-                    turtles and primates.
-                  </p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmV5fGkBl7tRmFWwDI96XziuvUxNIZe_kk8OwXQOMSWm0iV0mD-NSkfENx&s=10"
-                    alt="Western Ghats and Sri Lanka biodiversity hotspot"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Hotspot 3 of 4</span>
-                  <h4>Western Ghats and Sri Lanka</h4>
-                  <p>
-                    Along India's west coast. Lion-tailed macaque, many
-                    amphibians.
-                  </p>
-                </div>
-              </article>
-              <article class="zcard">
-                <div class="zimg">
-                  <i class="fa-solid fa-image" aria-hidden="true"></i
-                  ><img
-                    src="https://www.livelaw.in/h-upload/2023/04/08/750x450_467375-53647567.webp"
-                    alt="Sundaland biodiversity hotspot"
-                    onerror="this.style.display = 'none'"
-                  />
-                </div>
-                <div class="zbody">
-                  <span class="label">Hotspot 4 of 4</span>
-                  <h4>Sundaland</h4>
-                  <p>Includes the Nicobar Islands within India.</p>
-                </div>
-              </article>
-            </div>
-            <div class="zctrl">
-              <button class="zbtn zprev" aria-label="Previous hotspot">
-                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
-              </button>
-              <span class="zcount" aria-live="polite">1 / 4</span>
-              <button class="zbtn znext" aria-label="Next hotspot">
-                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-
-          <h3>Values of biodiversity</h3>
-          <div class="grid g4 reveal">
-            <div class="card">
-              <h4>Consumptive</h4>
-              <p>Direct use for subsistence: food, fuelwood, fodder, fish.</p>
-              <p>
-                <b>Local:</b> villagers gather firewood and fish.<br /><b
-                  >National:</b
-                >
-                forests and fisheries feed millions.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Productive</h4>
-              <p>
-                Harvested and sold commercially: timber, medicines, silk,
-                spices.
-              </p>
-              <p>
-                <b>Local:</b> tendu leaf and honey trade.<br /><b>National:</b>
-                Ayurvedic and pharma industries, tea, spices.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Social</h4>
-              <p>Cultural and religious importance.</p>
-              <p>
-                <b>Local:</b> sacred groves, tulsi, peepal.<br /><b
-                  >National:</b
-                >
-                national animal and bird, festivals.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Ethical</h4>
-              <p>Every species has a right to exist, regardless of use.</p>
-              <p>
-                <b>Local:</b> community protection of wildlife.<br /><b
-                  >National:</b
-                >
-                Constitution's Article 51A(g) duty to protect wildlife.
-              </p>
-            </div>
-          </div>
-
-          <h3>Habitat fragmentation</h3>
-          <p>
-            Fragmentation breaks a large continuous habitat into small, isolated
-            patches, typically through roads, farms, dams and cities.
-          </p>
-          <figure class="diagram reveal">
-            <img
-              src="assets/images/habitat-fragmentation.png"
-              alt="Habitat before and after fragmentation"
-            />
-            <figcaption>Habitat fragmentation: before and after</figcaption>
-          </figure>
-          <div class="card reveal">
-            <h4>How fragmentation threatens diversity</h4>
-            <ul>
-              <li>Smaller, isolated populations.</li>
-              <li>Reduced gene flow and more inbreeding.</li>
-              <li>
-                <b>Genetic diversity</b> falls, so populations adapt less well
-                to disease and change.
-              </li>
-              <li>
-                <b>Species diversity</b> falls through local extinctions, edge
-                effects and loss of wide-ranging species.
-              </li>
-            </ul>
-          </div>
-          <div class="box">
-            <p>
-              Example: elephant and tiger corridors are cut by highways and
-              railways, isolating populations. Wildlife corridors and overpasses
-              help reconnect them.
-            </p>
-          </div>
-
-          <div class="takeaway reveal">
-            <span class="tk-ico"
-              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i
-            ></span>
-            <div>
-              <h4>Remember this</h4>
-              <p>
-                India has ten biogeographic zones and four biodiversity
-                hotspots. Biodiversity has consumptive, productive, social and
-                ethical value, and habitat fragmentation reduces both genetic
-                and species diversity.
-              </p>
-            </div>
-          </div>
-
-          <div class="quiz reveal" data-quiz="biodiversity"></div>
-
-          <div class="next-wrap">
-            <a class="btn next-unit" href="#pollution"
-              >Next: Pollution
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-            ></a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============ UNIT IV ============ -->
-      <section id="pollution">
-        <div class="wave to-bg" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap">
-          <div class="reveal unit-head">
-            <span class="unit-num" aria-hidden="true">04</span
-            ><i class="fa-solid fa-smog unit-ico" aria-hidden="true"></i>
-            <h2>Topic: Pollution</h2>
-            <p class="lead">
-              A documented case study, its causes, and an integrated solid waste
-              and pollution control plan.
-            </p>
-          </div>
-          <div class="question reveal">
-            <span class="label"><u>Question 4</u></span>
-            <p>
-              Select a documented global or national
-              <b>pollution case study</b> (e.g., a major oil spill, industrial
-              chemical leak, or severe urban smog crisis). Identify the root
-              causes, analyze the contributing factors to air, water, or soil
-              degradation, and formulate an integrated
-              <b>Solid Waste Management and Pollution Control Plan</b> utilizing
-              specific technological interventions to mitigate such
-              environmental disasters.
-            </p>
-          </div>
-
-          <div class="dark reveal">
-            <span class="tag">Pollution case study</span>
-            <h3>Bhopal gas tragedy, India (1984)</h3>
-            <p>
-              On the night of 2–3 December 1984, methyl isocyanate (MIC) gas
-              leaked from a storage tank at the Union Carbide India Limited
-              pesticide plant in Bhopal. Water entering the tank triggered a
-              runaway reaction, and a toxic cloud spread over densely populated
-              neighbourhoods. It remains one of the world's worst industrial
-              disasters; estimates of deaths and injuries vary by source, but
-              run to thousands killed and hundreds of thousands affected.
-            </p>
-            <div class="pills">
-              <span>Root cause: safety failure</span
-              ><span>Impact: air, then soil and groundwater</span
-              ><span>Response: relief and site remediation</span>
-            </div>
-          </div>
-
-          <h3>Root causes and contributing factors</h3>
-          <div class="grid g2 reveal">
-            <div class="card brown">
-              <h4>Root causes</h4>
-              <ul>
-                <li>Large MIC stockpile in a plant near a populated area</li>
-                <li>
-                  Water entered the MIC tank, causing an exothermic runaway
-                  reaction
-                </li>
-                <li>
-                  Safety systems (refrigeration, vent gas scrubber, flare tower)
-                  were not working or inadequate
-                </li>
-              </ul>
-            </div>
-            <div class="card brown">
-              <h4>Contributing factors</h4>
-              <ul>
-                <li>Poor maintenance and reduced staffing and training</li>
-                <li>Weak emergency planning and no public warning</li>
-                <li>Lack of land-use zoning and regulatory oversight</li>
-                <li>Unmanaged hazardous waste stored on site</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3>Case-study timeline</h3>
-          <ol class="tl reveal">
-            <li>
-              <b>Event:</b> water contaminates the MIC tank during routine
-              operations.
-            </li>
-            <li><b>Cause:</b> failed safeguards let the reaction run away.</li>
-            <li><b>Release:</b> toxic MIC gas vents to the atmosphere.</li>
-            <li>
-              <b>Environmental damage:</b> air contaminated; later, soil and
-              groundwater around the site polluted by abandoned chemical waste.
-            </li>
-            <li>
-              <b>Human and ecological impact:</b> deaths, respiratory and eye
-              injuries, long-term health and livestock harm.
-            </li>
-            <li>
-              <b>Control response:</b> evacuation, medical relief, legal action
-              and site clean-up efforts.
-            </li>
-            <li>
-              <b>Long-term prevention:</b> stricter hazardous-chemical rules,
-              emergency planning and community right-to-know.
-            </li>
-          </ol>
-
-          <h3>Pollution pathways</h3>
-          <p class="reveal">
-            <b>Source</b> (MIC tank, plant waste) →
-            <b>air, soil and water</b> (gas cloud; leaching to groundwater) →
-            <b>exposure</b> (inhalation, contaminated drinking water) →
-            <b>impact</b> (illness, ecosystem harm).
-          </p>
-          <figure class="diagram reveal">
-            <img
-              src="assets/images/pollution-pathway.png"
-              alt="Pollution pathway for the Bhopal case study"
-            />
-            <figcaption>Pollution pathway</figcaption>
-          </figure>
-
-          <h3>Integrated solid waste management and pollution control plan</h3>
-          <div class="steps reveal">
-            <div class="card">
-              <h4>Prevent</h4>
-              <p>
-                Safer chemistry (avoid or minimise hazardous intermediates),
-                small inventories, inherently safer design, zoning buffers.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Detect</h4>
-              <p>
-                Gas sensors, IoT leak monitoring, real-time alarms and Process
-                Hazard Analysis.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Contain</h4>
-              <p>
-                Double-walled tanks, working scrubbers, flare towers,
-                water-curtain and emergency shutdown systems.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Collect and manage</h4>
-              <p>
-                Waste segregation, labelled hazardous waste storage, manifest
-                tracking, reduce-reuse-recycle hierarchy.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Treat</h4>
-              <p>
-                Secure engineered landfill, high-temperature incineration,
-                effluent treatment plants, bioremediation and phytoremediation
-                for contaminated soil and groundwater.
-              </p>
-            </div>
-            <div class="card">
-              <h4>Monitor</h4>
-              <p>
-                Regular groundwater and air testing, audits, public disclosure,
-                emergency drills and community warning systems.
-              </p>
-            </div>
-          </div>
-          <div class="box">
-            <p>
-              Applicable Indian rules include the Hazardous and Other Wastes
-              (Management and Transboundary Movement) Rules, 2016 and the Solid
-              Waste Management Rules, 2026 (in force from 1 April 2026,
-              replacing the 2016 rules), both made under the Environment
-              (Protection) Act, 1986. Preventing similar disasters needs design
-              safety, strict enforcement, trained staff and informed
-              communities.
-            </p>
-          </div>
-          <div class="card reveal">
-            <h4>Why this plan fits the case</h4>
-            <p>
-              The Bhopal failure was both acute (a gas release) and chronic
-              (waste left in the ground). The plan therefore pairs process
-              safety (prevent, detect, contain) with waste management (collect,
-              treat, monitor).
-            </p>
-          </div>
-
-          <div class="takeaway reveal">
-            <span class="tk-ico"
-              ><i class="fa-solid fa-lightbulb" aria-hidden="true"></i
-            ></span>
-            <div>
-              <h4>Remember this</h4>
-              <p>
-                Bhopal combined a sudden gas release with long-term waste
-                contamination. A good plan pairs process safety (prevent,
-                detect, contain) with waste management (collect, treat,
-                monitor).
-              </p>
-            </div>
-          </div>
-
-          <div class="quiz reveal" data-quiz="pollution"></div>
-
-          <div class="next-wrap">
-            <a class="btn next-unit" href="#conclusion"
-              >Next: Conclusion
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-            ></a>
-          </div>
-        </div>
-      </section>
-
-      <section id="conclusion" style="background: var(--card)">
-        <div class="wave to-card" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap reveal">
-          <span class="label">Conclusion</span>
-          <h2>Sustainability connects all four units</h2>
-          <p>
-            Healthy ecosystems supply the resources industry depends on.
-            Conserving those resources and protecting biodiversity keeps
-            ecosystems resilient, while preventing pollution avoids damage that
-            is costly or impossible to reverse. Sustainable engineering ties
-            these together by designing products and processes that work with
-            natural cycles rather than against them.
-          </p>
-          <div class="pillars reveal">
-            <div class="pillar">
-              <span><i class="fa-solid fa-tree" aria-hidden="true"></i></span
-              >Ecosystem protection
-            </div>
-            <div class="pillar">
-              <span><i class="fa-solid fa-droplet" aria-hidden="true"></i></span
-              >Resource conservation
-            </div>
-            <div class="pillar">
-              <span><i class="fa-solid fa-paw" aria-hidden="true"></i></span
-              >Biodiversity protection
-            </div>
-            <div class="pillar">
-              <span><i class="fa-solid fa-smog" aria-hidden="true"></i></span
-              >Pollution prevention
-            </div>
-            <div class="pillar">
-              <span><i class="fa-solid fa-gears" aria-hidden="true"></i></span
-              >Sustainable engineering
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="references">
-        <div class="wave to-bg" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-            <path
-              fill="currentColor"
-              d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"
-            />
-          </svg>
-        </div>
-        <div class="wrap reveal">
-          <span class="label">References</span>
-          <h2>Sources</h2>
-          <ol class="refs">
-            <li>
-              Odum, E. P. and Barrett, G. W. (2004).
-              <i>Fundamentals of Ecology</i>, 5th ed. Cengage Learning. ISBN
-              978-0-534-42066-6. Book details:<br />Link:
-              <a
-                href="https://www.goodreads.com/work/editions/2409487-fundamentals-of-ecology"
-                target="_blank"
-                rel="noopener"
-                >https://www.goodreads.com/work/editions/2409487-fundamentals-of-ecology</a
-              >
-            </li>
-            <li>
-              Bharucha, E. (2004).
-              <i
-                >Textbook for Environmental Studies for Undergraduate Courses of
-                All Branches of Higher Education</i
-              >. University Grants Commission.<br />Link:
-              <a
-                href="https://www.ugc.gov.in/oldpdf/modelcurriculum/env.pdf"
-                target="_blank"
-                rel="noopener"
-                >https://www.ugc.gov.in/oldpdf/modelcurriculum/env.pdf</a
-              >
-            </li>
-            <li>
-              Rodgers, W. A. and Panwar, H. S. (1988).
-              <i>Planning a Wildlife Protected Area Network in India</i>.
-              Wildlife Institute of India, Dehradun. Catalogue record (FAO
-              AGRIS):<br />Link:
-              <a
-                href="https://agris.fao.org/search/en/providers/122621/records/6471ce6377fd37171a6fbdc7"
-                target="_blank"
-                rel="noopener"
-                >https://agris.fao.org/search/en/providers/122621/records/6471ce6377fd37171a6fbdc7</a
-              >
-            </li>
-            <li>
-              Myers, N., Mittermeier, R. A., Mittermeier, C. G., da Fonseca, G.
-              A. B. and Kent, J. (2000). Biodiversity hotspots for conservation
-              priorities. <i>Nature</i>, 403, 853-858. DOI: 10.1038/35002501.<br />Link:
-              <a
-                href="https://www.nature.com/articles/35002501"
-                target="_blank"
-                rel="noopener"
-                >https://www.nature.com/articles/35002501</a
-              >
-            </li>
-            <li>
-              Broughton, E. (2005). The Bhopal disaster and its aftermath: a
-              review. <i>Environmental Health</i>, 4, 6. DOI:
-              10.1186/1476-069X-4-6.<br />Link:
-              <a
-                href="https://link.springer.com/article/10.1186/1476-069X-4-6"
-                target="_blank"
-                rel="noopener"
-                >https://link.springer.com/article/10.1186/1476-069X-4-6</a
-              >
-            </li>
-            <li>
-              Ministry of Environment, Forest and Climate Change (2026). Press
-              release: New Solid Waste Management Rules notified, to come into
-              force from April 1, 2026 (supersede the SWM Rules, 2016). Press
-              Information Bureau.<br />Link:
-              <a
-                href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676"
-                target="_blank"
-                rel="noopener"
-                >https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676</a
-              >
-            </li>
-            <li>
-              Ministry of Environment, Forest and Climate Change (2016).
-              Hazardous and Other Wastes (Management and Transboundary Movement)
-              Rules, 2016, G.S.R. 395(E), 4 April 2016. Gazette notification
-              PDF.<br />Link:
-              <a
-                href="https://chandigarhenvis.gov.in/sites/default/files/LawsNotificationsRules/showfile-compressed.pdf"
-                target="_blank"
-                rel="noopener"
-                >https://chandigarhenvis.gov.in/sites/default/files/LawsNotificationsRules/showfile-compressed.pdf</a
-              >
-            </li>
-            <li>
-              Constitution of India, Article 51A(g), Fundamental Duties.<br />Link:
-              <a
-                href="https://indiankanoon.org/doc/1644544/"
-                target="_blank"
-                rel="noopener"
-                >https://indiankanoon.org/doc/1644544/</a
-              >
-            </li>
-          </ol>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="wrap foot">
-        <div class="fcol">
-          <b>EcoScience</b>
-          <p>Environmental Science Assignment 01</p>
-          <p>Second Year B.Tech IT · Semester III · Winter 2026</p>
-        </div>
-        <div class="fcol">
-          <h5>Submitted by</h5>
-          <p>Group 3 · Class SYIT - B</p>
-          <p>GH Raisoni College</p>
-        </div>
-        <div class="fcol">
-          <h5>Quick links</h5>
-          <ul>
-            <li><a href="#ecosystems">Unit I · Ecosystems</a></li>
-            <li><a href="#resources">Unit II · Natural Resources</a></li>
-            <li><a href="#biodiversity">Unit III · Biodiversity</a></li>
-            <li><a href="#pollution">Unit IV · Pollution</a></li>
-            <li><a href="#references">References</a></li>
-          </ul>
-        </div>
+    <h3>Major biodiversity hotspots in India</h3>
+    <p>A hotspot has high endemism (at least 1,500 endemic plant species) and has lost at least 70% of its original habitat (Myers et al.).</p>
+        <div class="zones reveal" role="region" aria-roledescription="carousel" aria-label="Biodiversity hotspots in India">
+      <div class="stack" tabindex="0">
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://www.naturesafariindia.com/wp-content/uploads/2022/12/Himalayan-ranges-in-India.webp" alt="Himalaya biodiversity hotspot" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Hotspot 1 of 4</span><h4>Himalaya</h4><p>Northern and north-eastern Himalayan range. Rich in endemic plants and medicinal species.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTceoXgzzLGnaO7y4RorSuWbIcSU5hzIf4hxvAtEO6xrNSGU12WGwfZb3y9&s=10" alt="Indo-Burma biodiversity hotspot" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Hotspot 2 of 4</span><h4>Indo-Burma</h4><p>India's north-east and beyond. Many endemic freshwater turtles and primates.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmV5fGkBl7tRmFWwDI96XziuvUxNIZe_kk8OwXQOMSWm0iV0mD-NSkfENx&s=10" alt="Western Ghats and Sri Lanka biodiversity hotspot" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Hotspot 3 of 4</span><h4>Western Ghats and Sri Lanka</h4><p>Along India's west coast. Lion-tailed macaque, many amphibians.</p></div>
+        </article>
+        <article class="zcard">
+          <div class="zimg"><i class="fa-solid fa-image" aria-hidden="true"></i><img src="https://www.livelaw.in/h-upload/2023/04/08/750x450_467375-53647567.webp" alt="Sundaland biodiversity hotspot" onerror="this.style.display='none'"></div>
+          <div class="zbody"><span class="label">Hotspot 4 of 4</span><h4>Sundaland</h4><p>Includes the Nicobar Islands within India.</p></div>
+        </article>
       </div>
-      <div class="wrap foot-bottom">
-        <span>© 2026 Academic Project</span
-        ><a href="#top-of-page"
-          ><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to
-          top</a
-        >
+      <div class="zctrl">
+        <button class="zbtn zprev" aria-label="Previous hotspot"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+        <span class="zcount" aria-live="polite">1 / 4</span>
+        <button class="zbtn znext" aria-label="Next hotspot"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
       </div>
-    </footer>
-    <button id="top" aria-label="Back to top">
-      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    <h3>Values of biodiversity</h3>
+    <div class="grid g4 reveal">
+      <div class="card"><h4>Consumptive</h4><p>Direct use for subsistence: food, fuelwood, fodder, fish.</p><p><b>Local:</b> villagers gather firewood and fish.<br><b>National:</b> forests and fisheries feed millions.</p></div>
+      <div class="card"><h4>Productive</h4><p>Harvested and sold commercially: timber, medicines, silk, spices.</p><p><b>Local:</b> tendu leaf and honey trade.<br><b>National:</b> Ayurvedic and pharma industries, tea, spices.</p></div>
+      <div class="card"><h4>Social</h4><p>Cultural and religious importance.</p><p><b>Local:</b> sacred groves, tulsi, peepal.<br><b>National:</b> national animal and bird, festivals.</p></div>
+      <div class="card"><h4>Ethical</h4><p>Every species has a right to exist, regardless of use.</p><p><b>Local:</b> community protection of wildlife.<br><b>National:</b> Constitution's Article 51A(g) duty to protect wildlife.</p></div>
+    </div>
+
+    <h3>Habitat fragmentation</h3>
+    <p>Fragmentation breaks a large continuous habitat into small, isolated patches, typically through roads, farms, dams and cities.</p>
+    <figure class="diagram reveal">
+      <img src="assets/images/habitat-fragmentation.png" alt="Habitat before and after fragmentation">
+      <figcaption>Habitat fragmentation: before and after</figcaption>
+    </figure>
+    <div class="card reveal">
+      <h4>How fragmentation threatens diversity</h4>
+      <ul>
+        <li>Smaller, isolated populations.</li>
+        <li>Reduced gene flow and more inbreeding.</li>
+        <li><b>Genetic diversity</b> falls, so populations adapt less well to disease and change.</li>
+        <li><b>Species diversity</b> falls through local extinctions, edge effects and loss of wide-ranging species.</li>
+      </ul>
+    </div>
+    <div class="box"><p>Example: elephant and tiger corridors are cut by highways and railways, isolating populations. Wildlife corridors and overpasses help reconnect them.</p></div>
+
+    <div class="takeaway reveal"><span class="tk-ico"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><div><h4>Remember this</h4><p>India has ten biogeographic zones and four biodiversity hotspots. Biodiversity has consumptive, productive, social and ethical value, and habitat fragmentation reduces both genetic and species diversity.</p></div></div>
+
+    <div class="quiz reveal" data-quiz="biodiversity"></div>
+
+    <div class="next-wrap"><a class="btn next-unit" href="#pollution">Next: Pollution <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+  </div>
+</section>
+
+<!-- ============ UNIT IV ============ -->
+<section id="pollution">
+  <div class="wave to-bg" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap">
+    <div class="reveal unit-head">
+      <span class="unit-num" aria-hidden="true">04</span><i class="fa-solid fa-smog unit-ico" aria-hidden="true"></i>
+      <h2>Topic: Pollution</h2>
+      <p class="lead">A documented case study, its causes, and an integrated solid waste and pollution control plan.</p>
+    </div>
+    <div class="question reveal">
+      <span class="label"><u>Question 4</u></span>
+      <p>Select a documented global or national <b>pollution case study</b> (e.g., a major oil spill, industrial chemical leak, or severe urban smog crisis). Identify the root causes, analyze the contributing factors to air, water, or soil degradation, and formulate an integrated <b>Solid Waste Management and Pollution Control Plan</b> utilizing specific technological interventions to mitigate such environmental disasters.</p>
+    </div>
+
+   <div class="dark case-study reveal">
+  <div class="case-text">
+    <span class="tag">Pollution case study</span>
+    <h3>Bhopal gas tragedy, India (1984)</h3>
+    <p>On the night of 2–3 December 1984, methyl isocyanate (MIC) gas leaked from a storage tank at the Union Carbide India Limited pesticide plant in Bhopal. Water entering the tank triggered a runaway reaction, and a toxic cloud spread over densely populated neighbourhoods. It remains one of the world's worst industrial disasters; estimates of deaths and injuries vary by source, but run to thousands killed and hundreds of thousands affected.</p>
+    <div class="pills"><span>Root cause: safety failure</span><span>Impact: air, then soil and groundwater</span><span>Response: relief and site remediation</span></div>
+  </div>
+
+  <figure class="case-fig">
+  <div class="case-img-wrap">
+    <img src="https://images.indianexpress.com/2024/12/express-archives.jpg" alt="Bhopal gas tragedy, India (1984)">
+    <button class="expand case-expand" type="button" aria-label="View image full screen">
+      <i class="fa-solid fa-expand" aria-hidden="true"></i>
     </button>
-    <script src="script.js"></script>
-  </body>
+  </div>
+  <figcaption>Bhopal gas tragedy, India (1984)</figcaption>
+</figure>
+</div>
+
+    <h3>Root causes and contributing factors</h3>
+    <div class="grid g2 reveal">
+      <div class="card brown"><h4>Root causes</h4><ul><li>Large MIC stockpile in a plant near a populated area</li><li>Water entered the MIC tank, causing an exothermic runaway reaction</li><li>Safety systems (refrigeration, vent gas scrubber, flare tower) were not working or inadequate</li></ul></div>
+      <div class="card brown"><h4>Contributing factors</h4><ul><li>Poor maintenance and reduced staffing and training</li><li>Weak emergency planning and no public warning</li><li>Lack of land-use zoning and regulatory oversight</li><li>Unmanaged hazardous waste stored on site</li></ul></div>
+    </div>
+
+    <h3>Case-study timeline</h3>
+    <ol class="tl reveal">
+      <li><b>Event:</b> water contaminates the MIC tank during routine operations.</li>
+      <li><b>Cause:</b> failed safeguards let the reaction run away.</li>
+      <li><b>Release:</b> toxic MIC gas vents to the atmosphere.</li>
+      <li><b>Environmental damage:</b> air contaminated; later, soil and groundwater around the site polluted by abandoned chemical waste.</li>
+      <li><b>Human and ecological impact:</b> deaths, respiratory and eye injuries, long-term health and livestock harm.</li>
+      <li><b>Control response:</b> evacuation, medical relief, legal action and site clean-up efforts.</li>
+      <li><b>Long-term prevention:</b> stricter hazardous-chemical rules, emergency planning and community right-to-know.</li>
+    </ol>
+
+    <h3>Pollution pathways</h3>
+    <p class="reveal"><b>Source</b> (MIC tank, plant waste) → <b>air, soil and water</b> (gas cloud; leaching to groundwater) → <b>exposure</b> (inhalation, contaminated drinking water) → <b>impact</b> (illness, ecosystem harm).</p>
+    <figure class="diagram reveal">
+      <img src="assets/images/pollution-pathway.png" alt="Pollution pathway for the Bhopal case study">
+      <figcaption>Pollution pathway</figcaption>
+    </figure>
+
+    <h3>Integrated solid waste management and pollution control plan</h3>
+    <div class="steps reveal">
+      <div class="card"><h4>Prevent</h4><p>Safer chemistry (avoid or minimise hazardous intermediates), small inventories, inherently safer design, zoning buffers.</p></div>
+      <div class="card"><h4>Detect</h4><p>Gas sensors, IoT leak monitoring, real-time alarms and Process Hazard Analysis.</p></div>
+      <div class="card"><h4>Contain</h4><p>Double-walled tanks, working scrubbers, flare towers, water-curtain and emergency shutdown systems.</p></div>
+      <div class="card"><h4>Collect and manage</h4><p>Waste segregation, labelled hazardous waste storage, manifest tracking, reduce-reuse-recycle hierarchy.</p></div>
+      <div class="card"><h4>Treat</h4><p>Secure engineered landfill, high-temperature incineration, effluent treatment plants, bioremediation and phytoremediation for contaminated soil and groundwater.</p></div>
+      <div class="card"><h4>Monitor</h4><p>Regular groundwater and air testing, audits, public disclosure, emergency drills and community warning systems.</p></div>
+    </div>
+    <div class="box"><p>Applicable Indian rules include the Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016 and the Solid Waste Management Rules, 2026 (in force from 1 April 2026, replacing the 2016 rules), both made under the Environment (Protection) Act, 1986. Preventing similar disasters needs design safety, strict enforcement, trained staff and informed communities.</p></div>
+    <div class="card reveal"><h4>Why this plan fits the case</h4><p>The Bhopal failure was both acute (a gas release) and chronic (waste left in the ground). The plan therefore pairs process safety (prevent, detect, contain) with waste management (collect, treat, monitor).</p></div>
+
+    <div class="takeaway reveal"><span class="tk-ico"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span><div><h4>Remember this</h4><p>Bhopal combined a sudden gas release with long-term waste contamination. A good plan pairs process safety (prevent, detect, contain) with waste management (collect, treat, monitor).</p></div></div>
+
+    <div class="quiz reveal" data-quiz="pollution"></div>
+
+    <div class="next-wrap"><a class="btn next-unit" href="#conclusion">Next: Conclusion <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+  </div>
+</section>
+
+<section id="conclusion" style="background:var(--card)">
+  <div class="wave to-card" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap reveal">
+    <span class="label">Conclusion</span>
+    <h2>Sustainability connects all four units</h2>
+    <p>Healthy ecosystems supply the resources industry depends on. Conserving those resources and protecting biodiversity keeps ecosystems resilient, while preventing pollution avoids damage that is costly or impossible to reverse. Sustainable engineering ties these together by designing products and processes that work with natural cycles rather than against them.</p>
+    <div class="pillars reveal">
+      <div class="pillar"><span><i class="fa-solid fa-tree" aria-hidden="true"></i></span>Ecosystem protection</div>
+      <div class="pillar"><span><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>Resource conservation</div>
+      <div class="pillar"><span><i class="fa-solid fa-paw" aria-hidden="true"></i></span>Biodiversity protection</div>
+      <div class="pillar"><span><i class="fa-solid fa-smog" aria-hidden="true"></i></span>Pollution prevention</div>
+      <div class="pillar"><span><i class="fa-solid fa-gears" aria-hidden="true"></i></span>Sustainable engineering</div>
+    </div>
+  </div>
+</section>
+
+<section id="references">
+  <div class="wave to-bg" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="currentColor" d="M0,30 C240,64 480,-4 720,30 C960,64 1200,-4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+  <div class="wrap reveal">
+    <span class="label">References</span>
+    <h2>Sources</h2>
+    <ol class="refs">
+      <li>Odum, E. P. and Barrett, G. W. (2004). <i>Fundamentals of Ecology</i>, 5th ed. Cengage Learning. ISBN 978-0-534-42066-6. Book details:<br>Link: <a href="https://www.goodreads.com/work/editions/2409487-fundamentals-of-ecology" target="_blank" rel="noopener">https://www.goodreads.com/work/editions/2409487-fundamentals-of-ecology</a></li>
+      <li>Bharucha, E. (2004). <i>Textbook for Environmental Studies for Undergraduate Courses of All Branches of Higher Education</i>. University Grants Commission.<br>Link: <a href="https://www.ugc.gov.in/oldpdf/modelcurriculum/env.pdf" target="_blank" rel="noopener">https://www.ugc.gov.in/oldpdf/modelcurriculum/env.pdf</a></li>
+      <li>Rodgers, W. A. and Panwar, H. S. (1988). <i>Planning a Wildlife Protected Area Network in India</i>. Wildlife Institute of India, Dehradun. Catalogue record (FAO AGRIS):<br>Link: <a href="https://agris.fao.org/search/en/providers/122621/records/6471ce6377fd37171a6fbdc7" target="_blank" rel="noopener">https://agris.fao.org/search/en/providers/122621/records/6471ce6377fd37171a6fbdc7</a></li>
+      <li>Myers, N., Mittermeier, R. A., Mittermeier, C. G., da Fonseca, G. A. B. and Kent, J. (2000). Biodiversity hotspots for conservation priorities. <i>Nature</i>, 403, 853-858. DOI: 10.1038/35002501.<br>Link: <a href="https://www.nature.com/articles/35002501" target="_blank" rel="noopener">https://www.nature.com/articles/35002501</a></li>
+      <li>Broughton, E. (2005). The Bhopal disaster and its aftermath: a review. <i>Environmental Health</i>, 4, 6. DOI: 10.1186/1476-069X-4-6.<br>Link: <a href="https://link.springer.com/article/10.1186/1476-069X-4-6" target="_blank" rel="noopener">https://link.springer.com/article/10.1186/1476-069X-4-6</a></li>
+      <li>Ministry of Environment, Forest and Climate Change (2026). Press release: New Solid Waste Management Rules notified, to come into force from April 1, 2026 (supersede the SWM Rules, 2016). Press Information Bureau.<br>Link: <a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676" target="_blank" rel="noopener">https://www.pib.gov.in/PressReleasePage.aspx?PRID=2219676</a></li>
+      <li>Ministry of Environment, Forest and Climate Change (2016). Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016, G.S.R. 395(E), 4 April 2016. Gazette notification PDF.<br>Link: <a href="https://chandigarhenvis.gov.in/sites/default/files/LawsNotificationsRules/showfile-compressed.pdf" target="_blank" rel="noopener">https://chandigarhenvis.gov.in/sites/default/files/LawsNotificationsRules/showfile-compressed.pdf</a></li>
+      <li>Constitution of India, Article 51A(g), Fundamental Duties.<br>Link: <a href="https://indiankanoon.org/doc/1644544/" target="_blank" rel="noopener">https://indiankanoon.org/doc/1644544/</a></li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="fcol"><b>EcoScience</b><p>Environmental Science Assignment 01</p><p>Second Year B.Tech IT · Semester III · Winter 2026</p></div>
+    <div class="fcol"><h5>Submitted by</h5><p>Group 3 · Class SYIT - B</p><p><a href="https://ghrcemp.raisoni.net/" target="_blank" rel="noopener noreferrer"> GH Raisoni College of Engineering and Management, Pune</a></p></div>
+    <div class="fcol"><h5>Quick links</h5>
+      <ul>
+        <li><a href="#ecosystems">Unit I · Ecosystems</a></li>
+        <li><a href="#resources">Unit II · Natural Resources</a></li>
+        <li><a href="#biodiversity">Unit III · Biodiversity</a></li>
+        <li><a href="#pollution">Unit IV · Pollution</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap foot-bottom"><span>© 2026 Academic Assignment</span><a href="#top-of-page"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i> Back to top</a></div>
+</footer>
+<button id="top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></button>
+<script src="script.js"></script>
+</body>
 </html>
